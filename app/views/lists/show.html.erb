@@ -23,6 +23,8 @@ for every movie  -->
 </div>
   <% end %>
 
+<div class="container"><%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %></div>
+
 <!-- delete the current list -->
 <h4 class="container">
   <%= link_to "Delete", list_path(@list), method: 'delete' %>

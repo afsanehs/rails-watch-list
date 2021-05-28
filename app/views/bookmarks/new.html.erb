@@ -1,7 +1,8 @@
-<h1>helloo</h1>
-
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
-  <%= f.submit %>
-<% end %>
+<div class="container pt-3">
+  <h1>Add a movie</h1>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie, prompt: 'Select a movie', class: 'btn btn-cancel', input_html: { class: 'select2' } %>
+    <%= f.submit %>
+  <% end %>
+</div>

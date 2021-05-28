@@ -1,19 +1,29 @@
 <!-- how I can show the name of the list I am currently on? -->
-
-
-<!-- how do I show the movie (bookmark) I added to this list -->
-
+<h1 class="container">
+  <%= @list.name %>
+</h1>
 
 <!-- @list or @list.id -->
-<%= link_to "add a movie", new_list_bookmark_path(@list) %>
+<h4 class="container">
+  <%= link_to "add a movie", new_list_bookmark_path(@list) %>
+</h4>
 
 <!-- link between a list and movie => form with comment -->
 <!-- restaurant => list
 review => bookmark
 if we had users, it would be like the movies -->
 <!-- form with movie (dropdown), comment input -->
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.submit %>
-<% end %>
 
+<!-- how do I show the movie (bookmark) I added to this list -->
+<!-- a list has many movies = @list.movies.each => will iterate movies, insdude that iteration you can list
+for every movie  -->
+  <% @list.movies.each do |movie| %>
+<div class="card container">
+    <%= movie.title %>
+</div>
+  <% end %>
+
+<!-- delete the current list -->
+<h4 class="container">
+  <%= link_to "Delete", list_path(@list), method: 'delete' %>
+</h4>

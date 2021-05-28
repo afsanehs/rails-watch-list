@@ -1,0 +1,10 @@
+<!-- I can't delete -->
+<% @lists.each do |list| %>
+  <%= link_to list.name, list_path(list.id) %>
+  <%= link_to "Delete #{list.name}",
+            list_path(list.id),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<% end %>
+
+<%= link_to "add new list", new_list_path %>

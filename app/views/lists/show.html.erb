@@ -1,0 +1,19 @@
+<!-- how I can show the name of the list I am currently on? -->
+
+
+<!-- how do I show the movie (bookmark) I added to this list -->
+
+
+<!-- @list or @list.id -->
+<%= link_to "add a movie", new_list_bookmark_path(@list) %>
+
+<!-- link between a list and movie => form with comment -->
+<!-- restaurant => list
+review => bookmark
+if we had users, it would be like the movies -->
+<!-- form with movie (dropdown), comment input -->
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+<% end %>
+

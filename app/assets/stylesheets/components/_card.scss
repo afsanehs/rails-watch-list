@@ -1,8 +1,14 @@
 .card {
   height: 100px;
+  // width: 200px;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5px;
+  margin-top: 25px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('scifi.jpeg'));
+  background-size: cover;
+  a {
+    color: red;
+  }
 }

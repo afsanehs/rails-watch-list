@@ -1,12 +1,18 @@
-<h1 class="container pt-3">Lists</h1>
+<div class="banner">
+  <h1 class="container pt-3">Lists</h1>
+</div>
 
 <div class="container pt-3">
-<% @lists.each do |list| %>
-  <div class="card">
-    <%= link_to list.name, list_path(list.id) %>
+  <div class="row justify-content-start">
+    <% @lists.each do |list| %>
+      <div class="col-3">
+        <div class="card">
+          <%= link_to list.name, list_path(list.id) %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
-<h4>
-  <%= link_to "add new list", new_list_path %>
-</h4>
+  <h4>
+    <%= link_to "add new list", new_list_path %>
+  </h4>
 </div>
